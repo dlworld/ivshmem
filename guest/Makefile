@@ -16,12 +16,12 @@ else
 KDIR ?= /lib/modules/$$(uname -r)/build
 
 default:
-        $(MAKE) -C $(KDIR) M=$$PWD modules
-        $(CC) -Wall -O2 $(usr).c -o $(usr)
+	$(MAKE) -C $(KDIR) M=$$PWD modules
+	$(CC) -Wall -O2 $(usr).c -o $(usr)
 
 clean:
-        $(MAKE) -C $(KDIR) M=$$PWD clean
-        rm -f $(usr)
+	$(MAKE) -C $(KDIR) M=$$PWD clean
+	rm -f $(usr)
 
 .PHONY : clean
 endif
